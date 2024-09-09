@@ -1,101 +1,62 @@
-import Image from "next/image";
+"use client"
+import { Box, Container, Grid, Group, Image, Space, Stack, Text, Title } from "@mantine/core";
+import { CustomHeader } from "./_ui/CustomHeader";
+import { Carousel } from "@mantine/carousel";
+import '@mantine/carousel/styles.css';
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+const fontSize = "5.5rem"
+   return(
+    <Stack>
+      <CustomHeader/>
+      <Container>
+        <Stack align="center" justify="center">
+          <Title size={fontSize}>Welcome to Windows</Title>
+          <Text size="md" ta={"center"}>
+          We know your have got a lot to do. Every day delivers a new challenge. Well, those challenges are about to get easier with Windows 11.
+          </Text>
+          <Carousel withIndicators>
+            <Carousel.Slide>
+            <Image src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/MSFT-Windows-11-Search-bar?scl=1" alt=""/>
+            </Carousel.Slide>
+            <Carousel.Slide>
+            <Image src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/MSFT-PC-open-with-Start-menu-on-the-screen?scl=1" alt=""/>
+            </Carousel.Slide>
+            <Carousel.Slide>
+            <Image src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/MSFT-A-person-setting-a-PC-on-a-table?scl=1" alt=""/>
+            </Carousel.Slide>
+          </Carousel>
+        </Stack>
+      </Container>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+      <Space h={90}/>
+        <Stack align="center" justify="center" bg={"#ffe8cc"}>
+          <Group bg={"#ffe8cc"}>
+          <Box>
+            <Title size={fontSize}>Whats new in Windows 11</Title>
+            <Text ta={"center"}>
+              Windows 11 is more powerful than ever. Discover the latest features to help you be productive, creative, and more.
+            </Text>
+            </Box>
+            </Group>
+            </Stack>
+            <Group bg={"#ffe8cc"}>
+        <Space h={20}/>
+            <Grid>
+              <Grid.Col span={5} offset={1}>
+                <Image radius={10} src={"https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/MSFT-Windows-11-PC-with-colorful-bloom-Copilot-icon-on-screen-4000x4000?scl=1"} alt=""/>
+                <Text>Step into a new era of AI-powered Windows computers with your very own Copilot+ PC. The fastest, most intelligent Windows PCs ever.</Text>
+              </Grid.Col>
+              <Grid.Col span={5} >
+                <Image radius={10} src={"https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/MSFT_PhoneLink-4000x3000?scl=1"} alt=""/>
+                <Text >Step into a new era of AI-powered Windows computers with your very own Copilot+ PC. The fastest, most intelligent Windows PCs ever.</Text>
+              </Grid.Col>
+            </Grid>
+            </Group>
+         
+    </Stack>
+   )
 }
+
+//What’s new in Windows 11
+//Windows 11 is more powerful than ever. Discover the latest features to help you be productive, creative, and more.
