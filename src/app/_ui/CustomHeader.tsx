@@ -1,4 +1,4 @@
-import { ActionIcon, Box, Button, Container, Flex, Stack, Text } from "@mantine/core"
+import { ActionIcon, Box, Button, Container, Flex, Stack} from "@mantine/core"
 import { useState } from "react"
 import { FaSearch, FaWindows } from "react-icons/fa"
 import Link from "next/link"
@@ -49,7 +49,7 @@ export function CustomHeader() {
       <Flex gap={"lg"} justify={"space-around"} align={"center"} p={"md"}>
          <FaWindows/>
         {listMenu.map((v,k) => <MenuItemV3 key={k} data={v} onHover={onHover}/>) }
-        <Button component={Link} href="{/auth/login}" variant="transparent" size="compact-xs">Login</Button>
+        <Button component={Link} href="/auth/login" variant="transparent" size="compact-xs">Login</Button>
         <ActionIcon variant="transparent" size={"xs"}>
          <FaSearch/>
         </ActionIcon>

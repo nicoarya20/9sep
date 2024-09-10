@@ -17,10 +17,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <ColorSchemeScript defaultColorScheme='dark' />
+        <ColorSchemeScript defaultColorScheme='light' />
       </head>
       <body>
-        <MantineProvider defaultColorScheme='dark'>{children}</MantineProvider>
+        <MantineProvider defaultColorScheme='light'>{children}</MantineProvider>
       </body>
     </html>
   );

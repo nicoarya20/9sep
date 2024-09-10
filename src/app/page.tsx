@@ -1,5 +1,5 @@
 "use client"
-import { Box, Button, Card, Center, Container, Flex, Grid, Group, Image, ListItem, Overlay, SimpleGrid, Space, Stack, Text, Title, UnstyledButton } from "@mantine/core";
+import { Box, Button, Card, Container, Flex, Grid, GridCol, Group, Image, SimpleGrid, Space, Stack, Text, Title, UnstyledButton } from "@mantine/core";
 import { CustomHeader } from "./_ui/CustomHeader";
 import { Carousel } from "@mantine/carousel";
 import '@mantine/carousel/styles.css';
@@ -9,33 +9,51 @@ import { IoGameController } from "react-icons/io5";
 import { FaImage } from "react-icons/fa";
 import Link from "next/link";
 
+
 const listContent = [
   {
+    id: 1,
     title: "Smart security",
     content: "Before you even start your PC, Windows 11 is at work. Safeguard your device from phishing, network, and cyber-attacks.",
     icon: MdSecurityUpdate
   },
   {
+    id: 2,
     title: "Windows 11 works how you work",
     content: "Write with your own voice and adapt your digital experience to your unique audio and visual needs. Windows 11 OS is made for you, and for the things you love.",
     icon: GrWorkshop
   },
   {
+    id: 3,
     title: "Gaming never looked so good",
     content: "Immerse yourself in a cinematic gaming experience with next-level performance, smoother graphics, and natural lighting. Play next-gen and classic games online with Windows 11..",
     icon: IoGameController
   },
   {
+    id: 4,
     title: "Creativity meets intelligence",
     content: "Use AI to focus on the moments that matter most. Edit your photos and videos with Windows 11.",
-    icon:  FaImage
+    icon: FaImage
+  },
+  {
+    id: 5,
+    title: "Creativity meets intelligence",
+    content: "Use AI to focus on the moments that matter most. Edit your photos and videos with Windows 11.",
+    icon: FaImage
+  },
+  {
+    id: 6,
+    title: "Creativity meets intelligence",
+    content: "Use AI to focus on the moments that matter most. Edit your photos and videos with Windows 11.",
+    icon: FaImage
   }
 ]
 
 
 function Item() {
   return <SimpleGrid cols={2}>
-    {listContent.map((item, index) => <Card bg={"#DFEAFF"} key={index}>
+    {/* {listContent.map((item, index) => 
+    <Card bg={"#DFEAFF"} key={index}>
       <Flex>
         <Stack align="center" justify="center">
           <item.icon size={64} />
@@ -46,7 +64,23 @@ function Item() {
           <UnstyledButton component={Link} href={"/"} variant="transparent" size="sm" >Learn More</UnstyledButton>
         </Stack>
       </Flex>
-    </Card>)}
+    </Card>)} */}
+    {listContent.map((v, i) => {
+      return (
+        <Card bg={"#DFEAFF"} key={i}>
+          <Flex>
+            <Stack align="center" justify="center">
+              <v.icon size={64} />
+            </Stack>
+            <Stack p={"md"} align="start">
+              <Title order={3}>{v.title}</Title>
+              <Text>{v.content}</Text>
+              <UnstyledButton component={Link} href={"/"} variant="transparent" size="sm" >Learn More</UnstyledButton>
+            </Stack>
+          </Flex>
+        </Card>
+      )
+    })}
   </SimpleGrid>
 }
 
@@ -65,11 +99,12 @@ export default function Home() {
           <Carousel withIndicators loop>
             <Carousel.Slide>
               <Image src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/MSFT-Windows-11-Search-bar?scl=1" alt="" />
-              
-              <Title  c="white" w={700} style={{
-              position: 'absolute',
-              bottom: '20px',
-              left: '20px'}}>Explore Windows 11 new features</Title>
+
+              <Title c="white" w={700} style={{
+                position: 'absolute',
+                bottom: '20px',
+                left: '20px'
+              }}>Explore Windows 11 new features</Title>
             </Carousel.Slide>
             <Carousel.Slide>
               <Image src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/MSFT-PC-open-with-Start-menu-on-the-screen?scl=1" alt="" />
@@ -130,6 +165,7 @@ export default function Home() {
           <Space h={20} />
 
           <Item />
+          
 
 
 
@@ -188,23 +224,29 @@ export default function Home() {
       </Container>
       <Space h={100} />
       <Box bg={"#ffe8cc"}>
-      <Center>
-        <Title size={fontSize2}>Start With Your Windows 11 Journey</Title>
-        <Text>Get the help you need to make your switch to Windows 11 simple and start enjoying all that Windows has to offer.</Text>
-        </Center>
-        <Group>
-        <Carousel slideSize="30%" height={500} slideGap="md" loop withIndicators>
-        <Carousel.Slide >
-        <Image src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/MSFT-Windows-Search-bar-3000x4000?scl=1" alt="" />
-        </Carousel.Slide>
-        <Carousel.Slide>
-        <Image src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/MSFT-Windows-Search-bar-3000x4000?scl=1" alt="" />
-        </Carousel.Slide>
-        <Carousel.Slide>
-        <Image src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/MSFT-Windows-Search-bar-3000x4000?scl=1" alt="" />
-        </Carousel.Slide>
-        </Carousel>
-        </Group>
+        <Grid>
+          <GridCol span={6}>
+            <Stack align="center" justify="center">
+              <Title textWrap="balance" size={fontSize2}>Start With Your Windows 11 Journey</Title>
+              <Text>Get the help you need to make your switch to Windows 11 simple and start enjoying all that Windows has to offer.</Text>
+            </Stack>
+          </GridCol>
+          <GridCol span={6}>
+            <Group>
+              <Carousel slideSize="50%" height={500} slideGap="md" loop withIndicators>
+                <Carousel.Slide >
+                  <Image src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/MSFT-Windows-Search-bar-3000x4000?scl=1" alt="" />
+                </Carousel.Slide>
+                <Carousel.Slide>
+                  <Image src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/MSFT-Windows-Search-bar-3000x4000?scl=1" alt="" />
+                </Carousel.Slide>
+                <Carousel.Slide>
+                  <Image src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/MSFT-Windows-Search-bar-3000x4000?scl=1" alt="" />
+                </Carousel.Slide>
+              </Carousel>
+            </Group>
+          </GridCol>
+        </Grid>
       </Box>
     </Stack>
 

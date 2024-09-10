@@ -1,7 +1,8 @@
+import { Stack, Title } from "@mantine/core";
+
 export default function Page() {
-  return (
-    <div>
-      <h1>Malik</h1>
-    </div>
-  );
+  return <Stack align="center" justify="center" h={100}>
+    <Title>Profile</Title>
+  </Stack>
+  
 }
