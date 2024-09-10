@@ -3,7 +3,7 @@ import { Box, Button, Card, Center, Container, Flex, Grid, Group, Image, ListIte
 import { CustomHeader } from "./_ui/CustomHeader";
 import { Carousel } from "@mantine/carousel";
 import '@mantine/carousel/styles.css';
-import { MdNoAdultContent, MdSecurityUpdate } from "react-icons/md";
+import { MdSecurityUpdate } from "react-icons/md";
 import { GrWorkshop } from "react-icons/gr";
 import { IoGameController } from "react-icons/io5";
 import { FaImage } from "react-icons/fa";
@@ -26,9 +26,9 @@ const listContent = [
     icon: IoGameController
   },
   {
-    title: "Creativity meets intelligence", 
+    title: "Creativity meets intelligence",
     content: "Use AI to focus on the moments that matter most. Edit your photos and videos with Windows 11.",
-    icon:  FaImage 
+    icon:  FaImage
   }
 ]
 
